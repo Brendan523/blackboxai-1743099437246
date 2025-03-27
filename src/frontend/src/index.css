@@ -1,0 +1,164 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom CSS Variables */
+:root {
+  --primary-color: #2563eb;
+  --secondary-color: #4f46e5;
+  --success-color: #10b981;
+  --warning-color: #f59e0b;
+  --error-color: #ef4444;
+  --text-primary: #111827;
+  --text-secondary: #4b5563;
+  --bg-primary: #ffffff;
+  --bg-secondary: #f3f4f6;
+}
+
+/* Dark mode variables */
+.dark {
+  --text-primary: #f3f4f6;
+  --text-secondary: #9ca3af;
+  --bg-primary: #111827;
+  --bg-secondary: #1f2937;
+}
+
+/* Base styles */
+body {
+  @apply antialiased text-gray-900 dark:text-gray-100;
+  font-family: 'Inter', sans-serif;
+}
+
+/* Custom component classes */
+.btn {
+  @apply px-4 py-2 rounded-lg font-medium transition-colors duration-200;
+}
+
+.btn-primary {
+  @apply bg-blue-600 text-white hover:bg-blue-700 focus:ring-2 focus:ring-blue-500 focus:ring-offset-2;
+}
+
+.btn-secondary {
+  @apply bg-gray-200 text-gray-800 hover:bg-gray-300 dark:bg-gray-700 dark:text-gray-200 dark:hover:bg-gray-600;
+}
+
+.btn-danger {
+  @apply bg-red-600 text-white hover:bg-red-700 focus:ring-2 focus:ring-red-500 focus:ring-offset-2;
+}
+
+.input {
+  @apply w-full px-4 py-2 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:text-white;
+}
+
+.card {
+  @apply bg-white dark:bg-gray-800 rounded-lg shadow-md p-6;
+}
+
+/* Animation classes */
+.fade-enter {
+  opacity: 0;
+}
+
+.fade-enter-active {
+  opacity: 1;
+  transition: opacity 200ms ease-in;
+}
+
+.fade-exit {
+  opacity: 1;
+}
+
+.fade-exit-active {
+  opacity: 0;
+  transition: opacity 200ms ease-out;
+}
+
+/* Chat specific styles */
+.chat-message {
+  @apply mb-4 p-4 rounded-lg max-w-[80%];
+}
+
+.chat-message-user {
+  @apply bg-blue-100 dark:bg-blue-900 ml-auto;
+}
+
+.chat-message-ai {
+  @apply bg-gray-100 dark:bg-gray-700;
+}
+
+/* Dashboard specific styles */
+.dashboard-card {
+  @apply bg-white dark:bg-gray-800 rounded-lg shadow-md p-6 hover:shadow-lg transition-shadow duration-200;
+}
+
+.dashboard-stat {
+  @apply text-2xl font-bold text-blue-600 dark:text-blue-400;
+}
+
+/* Transaction specific styles */
+.transaction-row {
+  @apply hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors duration-150;
+}
+
+.transaction-amount {
+  @apply font-mono;
+}
+
+.transaction-positive {
+  @apply text-green-600 dark:text-green-400;
+}
+
+.transaction-negative {
+  @apply text-red-600 dark:text-red-400;
+}
+
+/* Task manager specific styles */
+.task-item {
+  @apply border-l-4 pl-4 mb-4;
+}
+
+.task-running {
+  @apply border-yellow-500;
+}
+
+.task-completed {
+  @apply border-green-500;
+}
+
+.task-error {
+  @apply border-red-500;
+}
+
+/* Responsive utilities */
+@media (max-width: 640px) {
+  .card {
+    @apply p-4;
+  }
+  
+  .chat-message {
+    @apply max-w-[90%];
+  }
+}
+
+/* Loading spinner */
+.spinner {
+  @apply w-6 h-6 border-4 border-blue-500 border-t-transparent rounded-full animate-spin;
+}
+
+/* Tooltip */
+.tooltip {
+  @apply invisible absolute;
+}
+
+.has-tooltip:hover .tooltip {
+  @apply visible z-50;
+}
+
+/* Modal */
+.modal-backdrop {
+  @apply fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50;
+}
+
+.modal-content {
+  @apply bg-white dark:bg-gray-800 rounded-lg shadow-xl max-w-lg w-full mx-4 p-6;
+}
